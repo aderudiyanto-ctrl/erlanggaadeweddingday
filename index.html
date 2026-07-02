@@ -462,7 +462,7 @@
   // ---- RSVP submit ----
   // 1. Follow SETUP-RSVP.txt to deploy the Google Apps Script.
   // 2. Paste the deployment URL below.
-  var GAS_URL = ""; // e.g. "https://script.google.com/macros/s/AKfy.../exec"
+  var GAS_URL = "https://script.google.com/macros/s/AKfycbxbQ9S0UxmefWPQV9HmzQPFvC3RuYZm3j-oKX5hrKKClcT7jr-_M65Qe_1UtypN1mcP/exec"; // e.g. "https://script.google.com/macros/s/AKfy.../exec"
 
   var form = document.getElementById('rsvp-form');
   var msg  = document.getElementById('rsvp-msg');
@@ -483,7 +483,7 @@
     }
     btn.disabled=true; msg.className=''; msg.textContent='Mengirim...';
     var body = new URLSearchParams(data);
-    fetch(GAS_URL, {method:'POST', body:body})
+    fetch(GAS_URL, {method:'POST', mode:'no-cors', body:body})
       .then(function(){ msg.className='ok'; msg.textContent='Terima kasih, '+data.nama+'! Konfirmasi Anda telah kami terima. ❤'; form.reset(); })
       .catch(function(){ msg.className='err'; msg.textContent='Maaf, terjadi kesalahan. Coba lagi ya.'; })
       .finally(function(){ btn.disabled=false; });
