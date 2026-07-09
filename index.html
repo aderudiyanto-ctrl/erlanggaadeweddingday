@@ -179,11 +179,15 @@
   /* ===== GIFT ===== */
   #gift{background:var(--ivory);text-align:center}
   #gift p{color:var(--muted);font-size:.92rem;margin-top:12px;max-width:360px;margin-left:auto;margin-right:auto}
-  .gift-card{margin-top:22px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px 20px}
-  .qr-box{width:190px;height:190px;margin:0 auto 16px;border:1px dashed var(--sage);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.78rem;text-align:center;padding:16px;background:var(--panel2)}
-  .qr-box img{width:100%;height:100%;object-fit:contain;border-radius:8px}
-  .gift-card .bank{font-family:var(--serif);font-size:1.2rem;color:var(--green)}
-  .gift-card .acct{letter-spacing:.1em;color:var(--ink);margin-top:2px;font-size:.92rem}
+  .gift-card{margin-top:22px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:28px 22px}
+  .gift-card .bank-logo{display:inline-block;font-family:var(--sans);font-weight:500;letter-spacing:.12em;font-size:.78rem;color:#fff;background:var(--green);padding:5px 14px;border-radius:6px}
+  .gift-card .acct-no{font-family:var(--serif);font-weight:600;font-size:1.9rem;letter-spacing:.08em;color:var(--green);margin-top:14px}
+  .gift-card .acct-name{color:var(--muted);font-size:.9rem;margin-top:2px}
+  .btn-copy{margin-top:18px;display:inline-flex;align-items:center;gap:9px;border:1px solid var(--green);color:var(--green);background:transparent;
+    font-family:var(--sans);font-weight:400;letter-spacing:.1em;text-transform:uppercase;font-size:.68rem;padding:11px 22px;border-radius:40px;cursor:pointer;transition:.3s}
+  .btn-copy:hover{background:var(--green);color:#fff}
+  .btn-copy:hover svg{stroke:#fff}
+  .btn-copy svg{width:15px;height:15px;stroke:var(--green);fill:none;stroke-width:1.6}
 
   /* ===== FOOTER ===== */
   footer{background:var(--green);color:#fff;text-align:center;padding:54px 24px 48px}
@@ -296,13 +300,13 @@
     <div class="ev-card">
       <div class="ic-wrap"><svg class="ic" viewBox="0 0 24 24"><circle cx="9" cy="9" r="4"/><circle cx="15" cy="15" r="4"/></svg></div>
       <h3>Akad Nikah</h3>
-      <div class="time">10.00 WIB</div>
+      <div class="time">10.00 – 12.00 WIB</div>
       <div class="sub">The Holy Matrimony</div>
     </div>
     <div class="ev-card">
       <div class="ic-wrap"><svg class="ic" viewBox="0 0 24 24"><path d="M8 22h8M12 15v7M5 3h14l-1 6a6 6 0 0 1-12 0z"/></svg></div>
       <h3>Resepsi</h3>
-      <div class="time">10.00 – 14.00 WIB</div>
+      <div class="time">12.00 – 14.00 WIB</div>
       <div class="sub">Wedding Reception</div>
     </div>
     <div class="venue">
@@ -391,11 +395,15 @@
   <div class="reveal">
     <div class="divider"><svg viewBox="0 0 24 24"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7S9 7 8 5.5 9 2 10.5 3 12 7 12 7ZM12 7s3 0 4-1.5S15 2 13.5 3 12 7 12 7Z"/></svg></div>
     <h2 class="title">Wedding Gift</h2>
-    <p>Doa restu Anda adalah hadiah terindah. Namun bila ingin memberi tanda kasih, Anda dapat melakukannya secara cashless melalui QR di bawah ini.</p>
+    <p>Doa restu Anda adalah hadiah terindah. Namun bila ingin memberi tanda kasih, Anda dapat melakukannya secara cashless melalui transfer ke rekening berikut.</p>
     <div class="gift-card">
-      <div class="qr-box" id="qr-box">QR transfer akan ditampilkan di sini</div>
-      <p class="bank">a.n. Ade Fitriyani Rudiyanto</p>
-      <p class="acct">Bank · 0000 0000 0000</p>
+      <div class="bank-logo">BCA</div>
+      <div class="acct-no" id="acct-no">4561125974</div>
+      <div class="acct-name">a.n. Ade Fitriyani Rudiyanto</div>
+      <button class="btn-copy" id="copy-btn" onclick="copyAcct()">
+        <svg viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        Salin Nomor Rekening
+      </button>
     </div>
   </div>
 </section>
@@ -421,6 +429,15 @@
   // ---- Guest name ----
   (function(){var p=new URLSearchParams(location.search);var to=p.get('to');
    if(to)document.getElementById('guest-name').textContent=decodeURIComponent(to.replace(/\+/g,' '));})();
+
+  // ---- Copy account number ----
+  function copyAcct(){
+    var no='4561125974', btn=document.getElementById('copy-btn');
+    function done(){var o=btn.innerHTML;btn.innerHTML='✓ Nomor Rekening Disalin';setTimeout(function(){btn.innerHTML=o;},2000);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(no).then(done).catch(function(){fallback(no);done();});}
+    else{fallback(no);done();}
+  }
+  function fallback(t){var ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(ta);}
 
   // ---- Countdown ----
   var TARGET=new Date('2026-08-15T10:00:00+07:00').getTime();
