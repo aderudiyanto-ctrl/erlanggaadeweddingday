@@ -423,7 +423,7 @@
 </div><!-- /app -->
 
 <div id="lightbox"><span class="x" onclick="closeLb()">&times;</span><img id="lb-img" src="" alt=""></div>
-<audio id="bgm" loop preload="none"><source src="song.mp3" type="audio/mpeg"></audio>
+<audio id="bgm" loop preload="auto"><source src="song.mp3" type="audio/mpeg"></audio>
 
 <script>
   // ---- Guest name ----
@@ -516,6 +516,7 @@
   // ================= MUSIC =================
   var bgm=document.getElementById('bgm'), musicOn=false, audioCtx=null, synthNodes=[], usingSynth=false;
   var mbtn=document.getElementById('music-btn');
+  bgm.volume=0.6;
 
   function startSynth(){
     try{
