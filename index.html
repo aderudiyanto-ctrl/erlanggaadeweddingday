@@ -188,6 +188,9 @@
   .btn-copy:hover{background:var(--green);color:#fff}
   .btn-copy:hover svg{stroke:#fff}
   .btn-copy svg{width:15px;height:15px;stroke:var(--green);fill:none;stroke-width:1.6}
+  .gift-or{margin:18px 0 -4px;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--sage)}
+  .gift-card .addr-name{font-family:var(--serif);font-size:1.3rem;color:var(--green);margin-top:2px}
+  .gift-card .addr-text{color:var(--ink);font-size:.92rem;line-height:1.55;margin:10px auto 16px;max-width:300px}
 
   /* ===== FOOTER ===== */
   footer{background:var(--green);color:#fff;text-align:center;padding:54px 24px 48px}
@@ -405,6 +408,17 @@
         Salin Nomor Rekening
       </button>
     </div>
+    <p class="gift-or">atau kirim kado ke alamat</p>
+    <div class="gift-card">
+      <div class="ic-wrap" style="margin:0 auto 12px"><svg class="ic" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+      <div class="acct-name" style="font-weight:400">Kepada</div>
+      <div class="addr-name">Ade Fitriyani Rudiyanto</div>
+      <p class="addr-text" id="addr-text">Apartemen Kalibata City Tower Akasia, Unit A/16/BH, Pancoran, Jakarta Selatan, DKI Jakarta, 12740</p>
+      <button class="btn-copy" id="addr-btn" onclick="copyAddr()">
+        <svg viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        Salin Alamat
+      </button>
+    </div>
   </div>
 </section>
 
@@ -438,6 +452,12 @@
     else{fallback(no);done();}
   }
   function fallback(t){var ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(ta);}
+  function copyAddr(){
+    var addr=document.getElementById('addr-text').textContent.trim(), btn=document.getElementById('addr-btn');
+    function done(){var o=btn.innerHTML;btn.innerHTML='✓ Alamat Disalin';setTimeout(function(){btn.innerHTML=o;},2000);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(addr).then(done).catch(function(){fallback(addr);done();});}
+    else{fallback(addr);done();}
+  }
 
   // ---- Countdown ----
   var TARGET=new Date('2026-08-15T10:00:00+07:00').getTime();
