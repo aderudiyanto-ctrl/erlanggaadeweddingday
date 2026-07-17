@@ -7,223 +7,217 @@
 <meta name="description" content="Undangan Pernikahan Erlangga & Ade Fitriyani — 15 Agustus 2026, Starray Hotel Kebayoran">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ivory:#f5f3ea;
-    --panel:#ffffff;
-    --panel2:#eef1e5;
-    --green:#3f5233;
+    --ivory:#f4f2ea;
+    --panel:#fbfaf5;
+    --panel2:#e9ece0;
+    --green:#37472d;
     --green2:#5c6f47;
-    --sage:#8a9a72;
+    --sage:#93a17d;
     --ink:#39422e;
-    --muted:#8b8f78;
-    --line:rgba(63,82,51,.16);
+    --muted:#8a8f78;
+    --line:rgba(55,71,45,.16);
+    --disp:'Playfair Display',serif;
     --serif:'Cormorant Garamond',serif;
     --sans:'Jost',sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{
-    background:var(--green);
-    color:var(--ink);
-    font-family:var(--sans);
-    font-weight:300;
-    line-height:1.65;
-  }
-  /* Narrow invitation column — mobile-first, floats on green on desktop */
-  .app{
-    max-width:480px;margin:0 auto;background:var(--ivory);
-    min-height:100vh;position:relative;overflow-x:hidden;
-    box-shadow:0 0 60px rgba(0,0,0,.35);
-  }
+  body{background:var(--ivory);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.7}
   img{display:block;max-width:100%}
-  .serif{font-family:var(--serif)}
-  .eyebrow{font-family:var(--sans);text-transform:uppercase;letter-spacing:.36em;font-size:.66rem;color:var(--sage);font-weight:400}
-  h2.title{font-family:var(--serif);font-weight:500;font-size:2.15rem;color:var(--green);line-height:1.1}
-  svg.ic{width:22px;height:22px;stroke:var(--green2);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-  .divider{display:flex;align-items:center;justify-content:center;gap:12px;margin:16px auto}
-  .divider::before,.divider::after{content:"";height:1px;width:44px;background:linear-gradient(90deg,transparent,var(--sage))}
+  .disp{font-family:var(--disp)}
+  .eyebrow{font-family:var(--sans);text-transform:uppercase;letter-spacing:.4em;font-size:.66rem;color:var(--sage);font-weight:400}
+  svg.ic{width:22px;height:22px;stroke:var(--green2);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+  .divider{display:flex;align-items:center;justify-content:center;gap:12px;margin:14px 0}
+  .divider::before,.divider::after{content:"";height:1px;width:46px;background:linear-gradient(90deg,transparent,var(--sage))}
   .divider::after{background:linear-gradient(90deg,var(--sage),transparent)}
-  .divider svg{width:16px;height:16px;stroke:var(--sage);fill:none;stroke-width:1.5}
-  section{position:relative;padding:52px 24px}
-  .center{text-align:center}
-
-  .reveal{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s ease}
+  .divider svg{width:16px;height:16px;stroke:var(--sage);fill:none;stroke-width:1.4}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity 1s ease,transform 1s ease}
   .reveal.in{opacity:1;transform:none}
 
   /* ===== COVER ===== */
-  #cover{
-    position:fixed;inset:0;z-index:120;max-width:480px;margin:0 auto;
-    background:linear-gradient(rgba(35,45,28,.32),rgba(35,45,28,.66) 78%),url('hero.jpg') center 22%/cover no-repeat;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
-    padding:36px;transition:opacity 1s ease,visibility 1s;color:#fff;
-  }
+  #cover{position:fixed;inset:0;z-index:200;
+    background:linear-gradient(rgba(30,40,24,.34),rgba(28,37,22,.72) 82%),url('hero.jpg') center 24%/cover no-repeat;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px;color:#fff;
+    transition:opacity 1s ease,visibility 1s}
   #cover.hidden{opacity:0;visibility:hidden}
-  #cover .eyebrow{color:#e7ecdc;margin-bottom:16px}
-  #cover h1{font-family:var(--serif);font-weight:500;font-size:clamp(3rem,15vw,4.2rem);line-height:1;color:#fff}
-  #cover h1 .amp{font-style:italic;color:#dfe6cf}
-  #cover .cdate{letter-spacing:.26em;text-transform:uppercase;font-size:.72rem;color:#e7ecdc;margin-top:6px}
-  #cover .to{margin-top:30px;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#cdd4be}
-  #cover .guest{font-family:var(--serif);font-size:1.6rem;color:#fff;margin-top:4px}
-  .open-btn{
-    margin-top:26px;background:var(--ivory);color:var(--green);border:none;
-    font-family:var(--sans);font-weight:500;letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;
-    padding:13px 26px;border-radius:40px;cursor:pointer;display:inline-flex;align-items:center;gap:9px;
-    box-shadow:0 10px 26px rgba(0,0,0,.3);transition:transform .3s}
-  .open-btn:hover{transform:translateY(-2px)}
-  .open-btn svg{width:17px;height:17px;stroke:var(--green);fill:none;stroke-width:1.6}
+  #cover .eyebrow{color:#dfe6cf;margin-bottom:14px}
+  #cover h1{font-family:var(--disp);font-weight:500;font-size:clamp(3rem,9vw,5.5rem);line-height:1.02}
+  #cover h1 .amp{font-style:italic}
+  #cover .cdate{letter-spacing:.28em;text-transform:uppercase;font-size:.74rem;color:#e7ecdc;margin-top:10px}
+  #cover .to{margin-top:34px;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#cdd4be}
+  #cover .guest{font-family:var(--disp);font-style:italic;font-size:1.7rem;color:#fff;margin-top:6px}
+  .open-btn{margin-top:28px;background:transparent;color:#fff;border:1px solid rgba(255,255,255,.7);
+    font-family:var(--sans);font-weight:400;letter-spacing:.16em;text-transform:uppercase;font-size:.74rem;
+    padding:14px 30px;border-radius:2px;cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:.3s}
+  .open-btn:hover{background:#fff;color:var(--green)}
+  .open-btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.5}
 
-  /* ===== HERO (photo shown fully, not cropped) ===== */
-  #hero{padding:0;background:var(--green)}
-  #hero .photo{width:100%;display:block}
-  #hero .cap{background:var(--green);color:#fff;text-align:center;padding:34px 24px 40px}
-  #hero .cap .eyebrow{color:#cdd4be}
-  #hero .names{font-family:var(--serif);font-weight:500;font-size:clamp(2.6rem,12vw,3.4rem);line-height:1.02;margin:8px 0}
-  #hero .names .amp{font-style:italic;color:#dfe6cf}
-  #hero .promise{letter-spacing:.28em;text-transform:uppercase;font-size:.66rem;color:#cdd4be;margin-top:4px}
-  #hero .badge{margin-top:22px;display:inline-block;border:1px solid rgba(255,255,255,.3);border-radius:6px;padding:12px 22px}
-  #hero .badge .d{font-family:var(--serif);font-size:1.5rem}
-  #hero .badge .s{font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:#cdd4be;margin-top:2px}
+  /* ===== STAGE / SPLIT ===== */
+  .side{display:none}
+  .content{width:100%}
 
-  /* ===== INTRO VERSE ===== */
-  #intro{background:var(--ivory);text-align:center}
-  #intro .verse{font-family:var(--serif);font-style:italic;font-size:1.25rem;line-height:1.55;color:var(--ink);max-width:360px;margin:0 auto}
-  #intro .src{margin-top:14px;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sage)}
+  @media(min-width:1000px){
+    .side{display:block;position:fixed;top:0;left:0;width:50vw;height:100vh;z-index:5;
+      background:linear-gradient(rgba(30,40,24,.15),rgba(28,37,22,.7)),url('side.jpg') center 28%/cover no-repeat}
+    .side .cap{position:absolute;left:52px;bottom:56px;right:52px;color:#fff}
+    .side .cap .eyebrow{color:#dfe6cf}
+    .side .cap h2{font-family:var(--disp);font-weight:500;font-size:clamp(2.6rem,4.4vw,4rem);line-height:1.02;margin:10px 0 12px}
+    .side .cap h2 .amp{font-style:italic}
+    .side .cap .d{letter-spacing:.24em;text-transform:uppercase;font-size:.8rem;color:#e7ecdc}
+    .content{margin-left:50vw;width:50vw;min-height:100vh;box-shadow:-30px 0 60px rgba(0,0,0,.12)}
+  }
 
-  /* ===== COUNTDOWN ===== */
-  #countdown{background:var(--panel2);text-align:center}
-  #countdown h2{margin-top:6px}
-  .cd-grid{display:flex;justify-content:center;gap:8px;margin-top:26px}
-  .cd-cell{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 6px;flex:1;max-width:78px}
-  .cd-cell .num{font-family:var(--serif);font-weight:600;font-size:1.9rem;color:var(--green);line-height:1}
-  .cd-cell .lbl{font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+  /* ===== SECTIONS ===== */
+  section{position:relative;padding:76px 44px}
+  @media(max-width:999px){section{padding:60px 26px}}
+  .center{text-align:center}
+  h2.title{font-family:var(--disp);font-weight:500;font-size:clamp(2rem,5vw,2.9rem);color:var(--green);line-height:1.1}
+  .sec-ivory{background:var(--ivory)}
+  .sec-panel{background:var(--panel2)}
+
+  /* date header row */
+  .date-row{display:flex;justify-content:center;gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);max-width:420px;margin:0 auto 34px}
+  .date-row div{flex:1;text-align:center;padding:14px 4px}
+  .date-row div + div{border-left:1px solid var(--line)}
+  .date-row .l{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--sage)}
+  .date-row .v{font-family:var(--disp);font-size:1.3rem;color:var(--green);margin-top:4px}
+
+  #intro{text-align:center}
+  #intro .names{font-family:var(--disp);font-weight:500;font-size:clamp(2.4rem,6vw,3.4rem);color:var(--green);line-height:1.05;margin:6px 0}
+  #intro .names .amp{font-style:italic}
+  #intro .sub{letter-spacing:.24em;text-transform:uppercase;font-size:.66rem;color:var(--sage);margin-top:4px}
+  #intro .verse{font-family:var(--serif);font-style:italic;font-size:1.3rem;line-height:1.55;color:var(--ink);max-width:440px;margin:30px auto 0}
+  #intro .src{margin-top:12px;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sage)}
+
+  /* full-bleed photo panel divider */
+  .photo-panel{padding:0;height:82vh;min-height:440px;position:relative;overflow:hidden}
+  .photo-panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .photo-panel .ov{position:absolute;inset:0;background:linear-gradient(rgba(30,40,24,.1),rgba(28,37,22,.55));display:flex;align-items:flex-end;padding:44px}
+  .photo-panel .ov p{font-family:var(--disp);font-style:italic;color:#fff;font-size:clamp(1.3rem,3vw,1.9rem);line-height:1.3;max-width:460px}
+
+  /* countdown */
+  #countdown{text-align:center}
+  .cd-grid{display:flex;justify-content:center;gap:10px;margin-top:26px}
+  .cd-cell{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:16px 8px;flex:1;max-width:96px}
+  .cd-cell .num{font-family:var(--disp);font-weight:600;font-size:1.9rem;color:var(--green);line-height:1}
+  .cd-cell .lbl{font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:6px}
   .btn-outline{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--green);color:var(--green);background:transparent;
-    font-family:var(--sans);font-weight:400;letter-spacing:.12em;text-transform:uppercase;font-size:.68rem;
-    padding:11px 22px;border-radius:40px;cursor:pointer;text-decoration:none;transition:.3s;margin-top:26px}
+    font-family:var(--sans);font-weight:400;letter-spacing:.14em;text-transform:uppercase;font-size:.7rem;
+    padding:12px 26px;border-radius:2px;cursor:pointer;text-decoration:none;transition:.3s;margin-top:28px}
   .btn-outline:hover{background:var(--green);color:#fff}
   .btn-outline:hover svg{stroke:#fff}
   .btn-outline svg{width:16px;height:16px;stroke:var(--green);fill:none;stroke-width:1.5}
 
-  /* ===== COUPLE ===== */
-  #couple{background:var(--ivory);text-align:center}
-  #couple .photo{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;border:1px solid var(--line);margin:24px 0 8px}
+  /* couple */
+  #couple{text-align:center}
+  #couple .cphoto{width:100%;max-width:520px;aspect-ratio:4/5;object-fit:cover;border-radius:3px;margin:26px auto 6px}
   .person{padding:20px 6px}
-  .person + .person{border-top:1px solid var(--line)}
   .person .role{font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;color:var(--sage);margin-bottom:6px}
-  .person h3{font-family:var(--serif);font-weight:500;font-size:1.85rem;color:var(--green);line-height:1.15}
-  .person .parents{color:var(--muted);font-size:.9rem;margin-top:6px;line-height:1.5}
-  .amp-sep{font-family:var(--serif);font-style:italic;font-size:1.6rem;color:var(--sage);margin:2px 0}
+  .person h3{font-family:var(--disp);font-weight:500;font-size:1.7rem;color:var(--green);line-height:1.15}
+  .person .parents{color:var(--muted);font-size:.9rem;margin-top:6px;line-height:1.55}
+  .amp-sep{font-family:var(--disp);font-style:italic;font-size:1.7rem;color:var(--sage)}
 
-  /* ===== EVENT (compact) ===== */
-  #event{background:var(--panel2);text-align:center}
-  #event .wholedate{font-family:var(--serif);font-size:1.4rem;color:var(--green2);margin:14px 0 20px}
-  .ev-card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 18px;margin-bottom:14px}
-  .ev-card .ic-wrap{width:44px;height:44px;border-radius:50%;background:var(--panel2);display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
-  .ev-card h3{font-family:var(--serif);font-weight:500;font-size:1.5rem;color:var(--green)}
-  .ev-card .time{font-size:.98rem;color:var(--ink);margin-top:2px}
-  .ev-card .sub{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:3px}
-  .venue{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 18px}
-  .venue .ic-wrap{width:44px;height:44px;border-radius:50%;background:var(--panel2);display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
-  .venue .place{font-family:var(--serif);font-size:1.35rem;color:var(--green)}
+  /* gallery masonry */
+  #gallery .head{text-align:center;margin-bottom:26px}
+  .masonry{column-count:2;column-gap:12px}
+  .masonry img{width:100%;margin:0 0 12px;border-radius:3px;cursor:pointer;break-inside:avoid;transition:filter .4s}
+  .masonry img:hover{filter:brightness(1.06)}
+
+  /* event */
+  #event{text-align:center}
+  #event .wholedate{font-family:var(--disp);font-size:1.3rem;color:var(--green2);margin:12px 0 22px}
+  .ev-card{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:24px 18px;margin-bottom:14px}
+  .ev-card .ic-wrap,.venue .ic-wrap{width:44px;height:44px;border-radius:50%;background:var(--panel2);display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
+  .ev-card h3{font-family:var(--disp);font-weight:500;font-size:1.4rem;color:var(--green)}
+  .ev-card .time{font-size:.98rem;color:var(--ink);margin-top:4px}
+  .ev-card .subx{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+  .venue{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:24px 18px}
+  .venue .place{font-family:var(--disp);font-size:1.3rem;color:var(--green)}
   .venue .addr{color:var(--muted);font-size:.86rem;margin:4px 0 16px}
 
-  /* ===== GALLERY SLIDER ===== */
-  #gallery{background:var(--ivory);text-align:center}
-  .slider{margin-top:22px;position:relative}
-  .track{display:flex;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;border-radius:14px;-ms-overflow-style:none;scrollbar-width:none}
-  .track::-webkit-scrollbar{display:none}
-  .track .slide{min-width:100%;scroll-snap-align:center;aspect-ratio:3/4;background:var(--panel2)}
-  .track .slide img{width:100%;height:100%;object-fit:cover}
-  .s-nav{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;
-    background:rgba(255,255,255,.85);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;cursor:pointer}
-  .s-nav svg{width:18px;height:18px;stroke:var(--green);fill:none;stroke-width:2}
-  .s-prev{left:10px}.s-next{right:10px}
-  .dots{display:flex;justify-content:center;gap:7px;margin-top:14px}
-  .dots span{width:7px;height:7px;border-radius:50%;background:var(--line);transition:.3s}
-  .dots span.on{background:var(--green);width:20px;border-radius:5px}
-
-  /* ===== RSVP + UCAPAN ===== */
-  #rsvp{background:var(--panel2)}
-  #rsvp .center{margin-bottom:8px}
-  form{margin-top:22px;display:flex;flex-direction:column;gap:16px}
+  /* rsvp */
+  #rsvp .head{text-align:center;margin-bottom:6px}
+  form{margin-top:22px;display:flex;flex-direction:column;gap:16px;max-width:520px;margin-left:auto;margin-right:auto}
   .field label{display:block;font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green2);margin-bottom:8px}
-  .field input[type=text],.field select,.field textarea{
-    width:100%;background:var(--panel);border:1px solid var(--line);border-radius:8px;color:var(--ink);
-    font-family:var(--sans);font-size:.98rem;padding:12px 14px;outline:none;transition:border .3s}
-  .field textarea{resize:vertical;min-height:84px}
+  .field input[type=text],.field select,.field textarea{width:100%;background:var(--panel);border:1px solid var(--line);border-radius:4px;color:var(--ink);font-family:var(--sans);font-size:.98rem;padding:12px 14px;outline:none;transition:border .3s}
+  .field textarea{resize:vertical;min-height:82px}
   .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--sage)}
   .field select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%235c6f47' stroke-width='2'><path d='M6 9l6 6 6-6'/></svg>");background-repeat:no-repeat;background-position:right 14px center}
   .radio-row{display:flex;gap:10px}
   .radio-row label{flex:1;cursor:pointer;margin:0}
   .radio-row input{position:absolute;opacity:0}
-  .radio-row .box{display:block;text-align:center;padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--muted);font-size:.85rem;transition:.25s}
-  .radio-row input:checked + .box{border-color:var(--green);background:rgba(63,82,51,.08);color:var(--green)}
-  .btn-fill{background:var(--green);color:#fff;border:none;font-family:var(--sans);font-weight:500;letter-spacing:.14em;text-transform:uppercase;
-    font-size:.74rem;padding:14px;border-radius:40px;cursor:pointer;transition:.3s;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+  .radio-row .box{display:block;text-align:center;padding:12px;border:1px solid var(--line);border-radius:4px;background:var(--panel);color:var(--muted);font-size:.85rem;transition:.25s}
+  .radio-row input:checked + .box{border-color:var(--green);background:rgba(55,71,45,.08);color:var(--green)}
+  .btn-fill{background:var(--green);color:#fff;border:none;font-family:var(--sans);font-weight:500;letter-spacing:.14em;text-transform:uppercase;font-size:.74rem;padding:14px;border-radius:2px;cursor:pointer;transition:.3s;display:inline-flex;align-items:center;justify-content:center;gap:8px}
   .btn-fill:hover{background:var(--green2)}
   .btn-fill:disabled{opacity:.6}
   .btn-fill svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:1.6}
   #rsvp-msg{text-align:center;font-size:.88rem;min-height:1.1em;color:var(--green2)}
   #rsvp-msg.err{color:#b5533f}
-  /* wishes feed */
-  .wishes{margin-top:30px}
+  .wishes{margin-top:30px;max-width:520px;margin-left:auto;margin-right:auto}
   .wishes .whead{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sage);text-align:center;margin-bottom:14px}
-  .feed{max-height:320px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;padding-right:4px}
-  .wish{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:13px 15px}
-  .wish .wn{font-family:var(--serif);font-size:1.15rem;color:var(--green);line-height:1.1}
+  .feed{max-height:340px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;padding-right:4px}
+  .wish{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:13px 15px}
+  .wish .wn{font-family:var(--disp);font-size:1.1rem;color:var(--green);line-height:1.1}
   .wish .wt{color:var(--ink);font-size:.9rem;margin-top:4px}
   .wish .wtime{font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:6px}
   .feed .empty{color:var(--muted);font-size:.88rem;text-align:center;padding:14px}
 
-  /* ===== GIFT ===== */
-  #gift{background:var(--ivory);text-align:center}
-  #gift p{color:var(--muted);font-size:.92rem;margin-top:12px;max-width:360px;margin-left:auto;margin-right:auto}
-  .gift-card{margin-top:22px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:28px 22px}
-  .gift-card .bank-logo{display:inline-block;font-family:var(--sans);font-weight:500;letter-spacing:.12em;font-size:.78rem;color:#fff;background:var(--green);padding:5px 14px;border-radius:6px}
-  .gift-card .acct-no{font-family:var(--serif);font-weight:600;font-size:1.9rem;letter-spacing:.08em;color:var(--green);margin-top:14px}
+  /* gift */
+  #gift{text-align:center}
+  #gift p.lead{color:var(--muted);font-size:.92rem;margin-top:12px;max-width:420px;margin-left:auto;margin-right:auto}
+  .gift-card{margin-top:22px;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:28px 22px;max-width:440px;margin-left:auto;margin-right:auto}
+  .gift-card .bank-logo{display:inline-block;font-family:var(--sans);font-weight:500;letter-spacing:.12em;font-size:.78rem;color:#fff;background:var(--green);padding:5px 14px;border-radius:4px}
+  .gift-card .acct-no{font-family:var(--disp);font-weight:600;font-size:1.8rem;letter-spacing:.06em;color:var(--green);margin-top:14px}
   .gift-card .acct-name{color:var(--muted);font-size:.9rem;margin-top:2px}
   .btn-copy{margin-top:18px;display:inline-flex;align-items:center;gap:9px;border:1px solid var(--green);color:var(--green);background:transparent;
-    font-family:var(--sans);font-weight:400;letter-spacing:.1em;text-transform:uppercase;font-size:.68rem;padding:11px 22px;border-radius:40px;cursor:pointer;transition:.3s}
+    font-family:var(--sans);font-weight:400;letter-spacing:.1em;text-transform:uppercase;font-size:.68rem;padding:11px 22px;border-radius:2px;cursor:pointer;transition:.3s}
   .btn-copy:hover{background:var(--green);color:#fff}
   .btn-copy:hover svg{stroke:#fff}
   .btn-copy svg{width:15px;height:15px;stroke:var(--green);fill:none;stroke-width:1.6}
-  .gift-or{margin:18px 0 -4px;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--sage)}
-  .gift-card .addr-name{font-family:var(--serif);font-size:1.3rem;color:var(--green);margin-top:2px}
+  .gift-or{margin:20px 0 -2px;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--sage)}
+  .gift-card .addr-name{font-family:var(--disp);font-size:1.2rem;color:var(--green);margin-top:2px}
   .gift-card .addr-text{color:var(--ink);font-size:.92rem;line-height:1.55;margin:10px auto 16px;max-width:300px}
 
-  /* ===== FOOTER ===== */
-  footer{background:var(--green);color:#fff;text-align:center;padding:54px 24px 48px}
+  /* footer */
+  footer{background:var(--green);color:#fff;text-align:center;padding:70px 30px 60px}
   footer .eyebrow{color:#cdd4be}
-  footer .thanks{color:#dbe0cf;max-width:360px;margin:16px auto 22px;font-size:.9rem}
-  footer .names{font-family:var(--serif);font-size:2.4rem;color:#fff}
-  footer .names .amp{font-style:italic;color:#dfe6cf}
+  footer .thanks{color:#dbe0cf;max-width:400px;margin:16px auto 24px;font-size:.92rem}
+  footer .names{font-family:var(--disp);font-size:clamp(2.2rem,7vw,3rem);color:#fff}
+  footer .names .amp{font-style:italic}
   footer .sig{margin-top:16px;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#aeb69b}
 
-  /* ===== MUSIC BUTTON ===== */
-  #music-btn{position:fixed;bottom:18px;z-index:130;left:50%;transform:translateX(calc(240px - 100%));margin-left:-14px;
-    width:46px;height:46px;border-radius:50%;background:var(--green);border:none;cursor:pointer;
-    display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.3)}
-  @media(max-width:480px){#music-btn{left:auto;right:16px;transform:none;margin:0}}
+  /* nav + music */
+  #nav-btn{position:fixed;top:18px;right:18px;z-index:150;width:46px;height:46px;border-radius:50%;background:rgba(55,71,45,.9);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center}
+  #nav-btn span{display:block;width:18px;height:1.5px;background:#fff;position:relative}
+  #nav-btn span::before,#nav-btn span::after{content:"";position:absolute;left:0;width:18px;height:1.5px;background:#fff}
+  #nav-btn span::before{top:-6px}#nav-btn span::after{top:6px}
+  #nav-menu{position:fixed;inset:0;z-index:160;background:rgba(37,47,29,.97);display:none;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+  #nav-menu.open{display:flex}
+  #nav-menu a{font-family:var(--disp);font-size:1.6rem;color:#eef1e6;text-decoration:none;padding:8px 0;transition:.2s}
+  #nav-menu a:hover{color:var(--sage);font-style:italic}
+  #nav-menu .close{position:absolute;top:22px;right:26px;color:#fff;font-size:2rem;cursor:pointer;line-height:1}
+
+  #music-btn{position:fixed;bottom:18px;right:18px;z-index:150;width:46px;height:46px;border-radius:50%;background:var(--green);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.28)}
   #music-btn svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:1.6}
   #music-btn.spin svg{animation:spin 4s linear infinite}
   @keyframes spin{to{transform:rotate(360deg)}}
 
-  /* Lightbox */
-  #lightbox{position:fixed;inset:0;background:rgba(30,38,24,.94);z-index:140;display:none;align-items:center;justify-content:center;padding:20px}
+  #lightbox{position:fixed;inset:0;background:rgba(28,37,22,.94);z-index:180;display:none;align-items:center;justify-content:center;padding:20px}
   #lightbox.show{display:flex}
-  #lightbox img{max-width:92vw;max-height:88vh;border-radius:8px}
+  #lightbox img{max-width:92vw;max-height:88vh;border-radius:4px}
   #lightbox .x{position:absolute;top:18px;right:22px;color:#fff;font-size:2rem;cursor:pointer;line-height:1}
 </style>
 </head>
 <body>
-<div class="app">
 
 <!-- ===== COVER ===== -->
 <div id="cover">
   <p class="eyebrow">The Wedding Of</p>
   <h1>Erlangga <span class="amp">&amp;</span> Ade</h1>
-  <div class="divider"><svg viewBox="0 0 24 24"><path d="M12 21C12 21 4 14.5 4 8.8 4 5.6 6.5 4 9 4c1.7 0 3 1 3 2.5C12 5 13.3 4 15 4c2.5 0 5 1.6 5 4.8C20 14.5 12 21 12 21Z"/></svg></div>
   <p class="cdate">Sabtu, 15 Agustus 2026</p>
   <p class="to">Kepada Yth. Bapak/Ibu/Saudara/i</p>
   <p class="guest" id="guest-name">Tamu Undangan</p>
@@ -233,233 +227,213 @@
   </button>
 </div>
 
-<!-- ===== HERO ===== -->
-<section id="hero">
-  <img class="photo" src="hero.jpg" alt="Erlangga & Ade">
+<!-- ===== DESKTOP FIXED SIDE ===== -->
+<div class="side" aria-hidden="true">
   <div class="cap">
-    <p class="eyebrow">Two Souls · One Love · One Promise</p>
-    <h1 class="names">Erlangga <span class="amp">&amp;</span><br>Ade Fitriyani</h1>
-    <p class="promise">We are getting married</p>
-    <div class="badge">
-      <div class="d">Sabtu, 15 Agustus 2026</div>
-      <div class="s">Starray Hotel Kebayoran</div>
-    </div>
+    <p class="eyebrow">The Wedding Of</p>
+    <h2 class="disp">Erlangga <span class="amp">&amp;</span> Ade Fitriyani</h2>
+    <p class="d">Sabtu, 15 Agustus 2026 · Starray Hotel Kebayoran</p>
   </div>
-</section>
+</div>
 
-<!-- ===== INTRO ===== -->
-<section id="intro">
-  <div class="reveal">
-    <div class="divider"><svg viewBox="0 0 24 24"><path d="M12 3l2.5 6H21l-5 4 2 7-6-4.2L6 20l2-7-5-4h6.5z"/></svg></div>
-    <p class="verse">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang."</p>
-    <p class="src">QS. Ar-Rum : 21</p>
-  </div>
-</section>
+<!-- ===== SCROLLING CONTENT ===== -->
+<div class="content">
 
-<!-- ===== COUNTDOWN ===== -->
-<section id="countdown">
-  <div class="reveal">
-    <p class="eyebrow">Counting Down To Our Big Day</p>
-    <h2 class="title">Menuju Hari Bahagia</h2>
-    <div class="cd-grid">
-      <div class="cd-cell"><div class="num" id="cd-d">00</div><div class="lbl">Hari</div></div>
-      <div class="cd-cell"><div class="num" id="cd-h">00</div><div class="lbl">Jam</div></div>
-      <div class="cd-cell"><div class="num" id="cd-m">00</div><div class="lbl">Menit</div></div>
-      <div class="cd-cell"><div class="num" id="cd-s">00</div><div class="lbl">Detik</div></div>
+  <section id="intro" class="sec-ivory">
+    <div class="reveal">
+      <div class="date-row">
+        <div><div class="l">Day</div><div class="v">Sabtu</div></div>
+        <div><div class="l">Date</div><div class="v">15 Agu</div></div>
+        <div><div class="l">Year</div><div class="v">2026</div></div>
+      </div>
+      <p class="sub">The Wedding Of</p>
+      <h2 class="names">Erlangga <span class="amp">&amp;</span> Ade Fitriyani</h2>
+      <div class="divider"><svg viewBox="0 0 24 24"><path d="M12 21C12 21 4 14.5 4 8.8 4 5.6 6.5 4 9 4c1.7 0 3 1 3 2.5C12 5 13.3 4 15 4c2.5 0 5 1.6 5 4.8C20 14.5 12 21 12 21Z"/></svg></div>
+      <p class="verse">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang."</p>
+      <p class="src">QS. Ar-Rum : 21</p>
     </div>
-    <a class="btn-outline" id="cal-link" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-      Save the Date
-    </a>
-  </div>
-</section>
+  </section>
 
-<!-- ===== COUPLE ===== -->
-<section id="couple">
-  <div class="reveal">
-    <p class="eyebrow">With Joyful Hearts</p>
-    <h2 class="title">The Bride &amp; Groom</h2>
-    <img class="photo" src="couple.jpg" alt="Erlangga & Ade Fitriyani">
-    <div class="person">
-      <p class="role">The Bride</p>
-      <h3>Ade Fitriyani Rudiyanto</h3>
-      <p class="parents">Putri dari<br>Bapak (Alm.) Agus Rudiyanto<br>&amp; Ibu (Almh.) Sri Utami</p>
-    </div>
-    <div class="amp-sep">&amp;</div>
-    <div class="person" style="border-top:none">
-      <p class="role">The Groom</p>
-      <h3>Erlangga</h3>
-      <p class="parents">Putra dari<br>Bapak Ery Widjaja<br>&amp; Ibu Nia Arniatin</p>
-    </div>
-  </div>
-</section>
+  <section class="photo-panel"><img src="panelA.jpg" alt=""><div class="ov"><p>Two souls, one love, one promise.</p></div></section>
 
-<!-- ===== EVENT ===== -->
-<section id="event">
-  <div class="reveal">
-    <p class="eyebrow">Save The Date</p>
-    <h2 class="title">Akad &amp; Resepsi</h2>
-    <p class="wholedate">Sabtu, 15 Agustus 2026</p>
-    <div class="ev-card">
-      <div class="ic-wrap"><svg class="ic" viewBox="0 0 24 24"><circle cx="9" cy="9" r="4"/><circle cx="15" cy="15" r="4"/></svg></div>
-      <h3>Akad Nikah</h3>
-      <div class="time">10.00 – 12.00 WIB</div>
-      <div class="sub">The Holy Matrimony</div>
-    </div>
-    <div class="ev-card">
-      <div class="ic-wrap"><svg class="ic" viewBox="0 0 24 24"><path d="M8 22h8M12 15v7M5 3h14l-1 6a6 6 0 0 1-12 0z"/></svg></div>
-      <h3>Resepsi</h3>
-      <div class="time">12.00 – 14.00 WIB</div>
-      <div class="sub">Wedding Reception</div>
-    </div>
-    <div class="venue">
-      <div class="ic-wrap"><svg class="ic" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
-      <p class="place">Starray Hotel Kebayoran</p>
-      <p class="addr">Kebayoran, Jakarta</p>
-      <a class="btn-outline" style="margin-top:4px" href="https://maps.app.goo.gl/EvHnY6uzsVombWbq6" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
-        Lihat Lokasi
+  <section id="countdown" class="sec-panel">
+    <div class="reveal">
+      <p class="eyebrow">Counting Down To Our Big Day</p>
+      <h2 class="title">Save The Date</h2>
+      <div class="cd-grid">
+        <div class="cd-cell"><div class="num" id="cd-d">00</div><div class="lbl">Hari</div></div>
+        <div class="cd-cell"><div class="num" id="cd-h">00</div><div class="lbl">Jam</div></div>
+        <div class="cd-cell"><div class="num" id="cd-m">00</div><div class="lbl">Menit</div></div>
+        <div class="cd-cell"><div class="num" id="cd-s">00</div><div class="lbl">Detik</div></div>
+      </div>
+      <a class="btn-outline" id="cal-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        Simpan Tanggal
       </a>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===== GALLERY ===== -->
-<section id="gallery">
-  <div class="reveal">
-    <p class="eyebrow">Captured Moments</p>
-    <h2 class="title">Our Gallery</h2>
-    <div class="slider">
-      <div class="track" id="track">
-        <div class="slide"><img src="couple.jpg" alt=""></div>
-        <div class="slide"><img src="g01.jpg" alt=""></div>
-        <div class="slide"><img src="g02.jpg" alt=""></div>
-        <div class="slide"><img src="g03.jpg" alt=""></div>
-        <div class="slide"><img src="g04.jpg" alt=""></div>
-        <div class="slide"><img src="g05.jpg" alt=""></div>
-        <div class="slide"><img src="g06.jpg" alt=""></div>
-        <div class="slide"><img src="g07.jpg" alt=""></div>
-        <div class="slide"><img src="g08.jpg" alt=""></div>
+  <section id="couple" class="sec-ivory">
+    <div class="reveal">
+      <p class="eyebrow">With Joyful Hearts</p>
+      <h2 class="title">The Bride &amp; Groom</h2>
+      <img class="cphoto" src="couple.jpg" alt="Erlangga & Ade Fitriyani">
+      <div class="person">
+        <p class="role">The Bride</p>
+        <h3>Ade Fitriyani Rudiyanto</h3>
+        <p class="parents">Putri dari<br>Bapak (Alm.) Agus Rudiyanto<br>&amp; Ibu (Almh.) Sri Utami</p>
       </div>
-      <div class="s-nav s-prev" onclick="slide(-1)"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></div>
-      <div class="s-nav s-next" onclick="slide(1)"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div>
+      <div class="amp-sep">&amp;</div>
+      <div class="person">
+        <p class="role">The Groom</p>
+        <h3>Erlangga</h3>
+        <p class="parents">Putra dari<br>Bapak Ery Widjaja<br>&amp; Ibu Nia Arniatin</p>
+      </div>
     </div>
-    <div class="dots" id="dots"></div>
-  </div>
-</section>
+  </section>
 
-<!-- ===== RSVP + UCAPAN ===== -->
-<section id="rsvp">
-  <div class="reveal">
-    <div class="center">
-      <p class="eyebrow">Kindly Reply</p>
-      <h2 class="title">RSVP &amp; Ucapan</h2>
-    </div>
-    <form id="rsvp-form">
-      <div class="field">
-        <label for="nama">Nama</label>
-        <input type="text" id="nama" name="nama" placeholder="Nama lengkap Anda" required>
+  <section class="photo-panel"><img src="panelB.jpg" alt=""><div class="ov"><p>Setiap langkah menuju bahagia, bersamamu.</p></div></section>
+
+  <section id="gallery" class="sec-ivory">
+    <div class="reveal">
+      <div class="head">
+        <p class="eyebrow">Captured Moments</p>
+        <h2 class="title">Our Moment</h2>
       </div>
-      <div class="field">
-        <label>Konfirmasi Kehadiran</label>
-        <div class="radio-row">
-          <label><input type="radio" name="kehadiran" value="Hadir" required><span class="box">Hadir</span></label>
-          <label><input type="radio" name="kehadiran" value="Tidak Hadir"><span class="box">Tidak Hadir</span></label>
+      <div class="masonry" id="masonry">
+        <img src="couple.jpg" alt="">
+        <img src="g11.jpg" alt="">
+        <img src="g01.jpg" alt="">
+        <img src="g10.jpg" alt="">
+        <img src="g04.jpg" alt="">
+        <img src="g13.jpg" alt="">
+        <img src="g05.jpg" alt="">
+        <img src="g12.jpg" alt="">
+        <img src="g06.jpg" alt="">
+        <img src="g03.jpg" alt="">
+        <img src="g08.jpg" alt="">
+        <img src="g07.jpg" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section id="event" class="sec-panel">
+    <div class="reveal">
+      <p class="eyebrow">Save The Date</p>
+      <h2 class="title">Akad &amp; Resepsi</h2>
+      <p class="wholedate">Sabtu, 15 Agustus 2026</p>
+      <div class="ev-card">
+        <div class="ic-wrap"><svg class="ic" viewBox="0 0 24 24"><circle cx="9" cy="9" r="4"/><circle cx="15" cy="15" r="4"/></svg></div>
+        <h3>Akad Nikah</h3>
+        <div class="time">10.00 – 12.00 WIB</div>
+        <div class="subx">The Holy Matrimony</div>
+      </div>
+      <div class="ev-card">
+        <div class="ic-wrap"><svg class="ic" viewBox="0 0 24 24"><path d="M8 22h8M12 15v7M5 3h14l-1 6a6 6 0 0 1-12 0z"/></svg></div>
+        <h3>Resepsi</h3>
+        <div class="time">12.00 – 14.00 WIB</div>
+        <div class="subx">Wedding Reception</div>
+      </div>
+      <div class="venue">
+        <div class="ic-wrap"><svg class="ic" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <p class="place">Starray Hotel Kebayoran</p>
+        <p class="addr">Kebayoran, Jakarta</p>
+        <a class="btn-outline" style="margin-top:4px" href="https://maps.app.goo.gl/EvHnY6uzsVombWbq6" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          Lihat Lokasi
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="rsvp" class="sec-ivory">
+    <div class="reveal">
+      <div class="head">
+        <p class="eyebrow">Kindly Reply</p>
+        <h2 class="title">RSVP &amp; Ucapan</h2>
+      </div>
+      <form id="rsvp-form">
+        <div class="field"><label for="nama">Nama</label><input type="text" id="nama" name="nama" placeholder="Nama lengkap Anda" required></div>
+        <div class="field"><label>Konfirmasi Kehadiran</label>
+          <div class="radio-row">
+            <label><input type="radio" name="kehadiran" value="Hadir" required><span class="box">Hadir</span></label>
+            <label><input type="radio" name="kehadiran" value="Tidak Hadir"><span class="box">Tidak Hadir</span></label>
+          </div>
         </div>
+        <div class="field"><label for="jumlah">Jumlah Tamu</label>
+          <select id="jumlah" name="jumlah" required><option value="0">0</option><option value="1" selected>1</option><option value="2">2</option></select>
+        </div>
+        <div class="field"><label for="pesan">Ucapan &amp; Doa</label><textarea id="pesan" name="pesan" placeholder="Tuliskan ucapan &amp; doa terbaik Anda..."></textarea></div>
+        <button type="submit" class="btn-fill" id="rsvp-btn"><svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg> Kirim</button>
+        <p id="rsvp-msg"></p>
+      </form>
+      <div class="wishes">
+        <div class="whead">Ucapan &amp; Doa dari Tamu</div>
+        <div class="feed" id="feed"><div class="empty">Memuat ucapan...</div></div>
       </div>
-      <div class="field">
-        <label for="jumlah">Jumlah Tamu</label>
-        <select id="jumlah" name="jumlah" required>
-          <option value="0">0</option>
-          <option value="1" selected>1</option>
-          <option value="2">2</option>
-        </select>
+    </div>
+  </section>
+
+  <section id="gift" class="sec-panel">
+    <div class="reveal">
+      <div class="divider"><svg viewBox="0 0 24 24"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7S9 7 8 5.5 9 2 10.5 3 12 7 12 7ZM12 7s3 0 4-1.5S15 2 13.5 3 12 7 12 7Z"/></svg></div>
+      <h2 class="title">Wedding Gift</h2>
+      <p class="lead">Doa restu Anda adalah hadiah terindah. Namun bila ingin memberi tanda kasih, Anda dapat melakukannya melalui transfer atau mengirim kado ke alamat berikut.</p>
+      <div class="gift-card">
+        <div class="bank-logo">BCA</div>
+        <div class="acct-no" id="acct-no">4561125974</div>
+        <div class="acct-name">a.n. Ade Fitriyani Rudiyanto</div>
+        <button class="btn-copy" id="copy-btn" onclick="copyAcct()"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg> Salin Nomor Rekening</button>
       </div>
-      <div class="field">
-        <label for="pesan">Ucapan &amp; Doa</label>
-        <textarea id="pesan" name="pesan" placeholder="Tuliskan ucapan &amp; doa terbaik Anda..."></textarea>
+      <p class="gift-or">atau kirim kado ke alamat</p>
+      <div class="gift-card">
+        <div class="ic-wrap" style="width:44px;height:44px;border-radius:50%;background:var(--panel2);display:flex;align-items:center;justify-content:center;margin:0 auto 12px"><svg class="ic" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <div class="acct-name" style="font-weight:400">Kepada</div>
+        <div class="addr-name">Ade Fitriyani Rudiyanto</div>
+        <p class="addr-text" id="addr-text">Apartemen Kalibata City Tower Akasia, Unit A/16/BH, Pancoran, Jakarta Selatan, DKI Jakarta, 12740</p>
+        <button class="btn-copy" id="addr-btn" onclick="copyAddr()"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg> Salin Alamat</button>
       </div>
-      <button type="submit" class="btn-fill" id="rsvp-btn">
-        <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg>
-        Kirim
-      </button>
-      <p id="rsvp-msg"></p>
-    </form>
-
-    <div class="wishes">
-      <div class="whead">Ucapan &amp; Doa dari Tamu</div>
-      <div class="feed" id="feed"><div class="empty">Memuat ucapan...</div></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===== GIFT ===== -->
-<section id="gift">
-  <div class="reveal">
-    <div class="divider"><svg viewBox="0 0 24 24"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7S9 7 8 5.5 9 2 10.5 3 12 7 12 7ZM12 7s3 0 4-1.5S15 2 13.5 3 12 7 12 7Z"/></svg></div>
-    <h2 class="title">Wedding Gift</h2>
-    <p>Doa restu Anda adalah hadiah terindah. Namun bila ingin memberi tanda kasih, Anda dapat melakukannya secara cashless melalui transfer ke rekening berikut.</p>
-    <div class="gift-card">
-      <div class="bank-logo">BCA</div>
-      <div class="acct-no" id="acct-no">4561125974</div>
-      <div class="acct-name">a.n. Ade Fitriyani Rudiyanto</div>
-      <button class="btn-copy" id="copy-btn" onclick="copyAcct()">
-        <svg viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
-        Salin Nomor Rekening
-      </button>
-    </div>
-    <p class="gift-or">atau kirim kado ke alamat</p>
-    <div class="gift-card">
-      <div class="ic-wrap" style="margin:0 auto 12px"><svg class="ic" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
-      <div class="acct-name" style="font-weight:400">Kepada</div>
-      <div class="addr-name">Ade Fitriyani Rudiyanto</div>
-      <p class="addr-text" id="addr-text">Apartemen Kalibata City Tower Akasia, Unit A/16/BH, Pancoran, Jakarta Selatan, DKI Jakarta, 12740</p>
-      <button class="btn-copy" id="addr-btn" onclick="copyAddr()">
-        <svg viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
-        Salin Alamat
-      </button>
-    </div>
-  </div>
-</section>
+  <footer>
+    <p class="eyebrow">Thank You</p>
+    <p class="thanks">Merupakan suatu kebahagiaan dan kehormatan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
+    <p class="names">Erlangga <span class="amp">&amp;</span> Ade</p>
+    <p class="sig">15 Agustus 2026 · Starray Hotel Kebayoran</p>
+  </footer>
+</div><!-- /content -->
 
-<!-- ===== FOOTER ===== -->
-<footer>
-  <p class="eyebrow">Thank You</p>
-  <p class="thanks">Merupakan suatu kebahagiaan dan kehormatan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
-  <p class="names">Erlangga <span class="amp">&amp;</span> Ade</p>
-  <p class="sig">15 Agustus 2026 · Starray Hotel Kebayoran</p>
-</footer>
+<!-- ===== NAV ===== -->
+<button id="nav-btn" onclick="document.getElementById('nav-menu').classList.add('open')" title="Menu"><span></span></button>
+<div id="nav-menu">
+  <span class="close" onclick="document.getElementById('nav-menu').classList.remove('open')">&times;</span>
+  <a href="#intro" onclick="closeNav()">Mempelai</a>
+  <a href="#countdown" onclick="closeNav()">Save the Date</a>
+  <a href="#couple" onclick="closeNav()">The Bride &amp; Groom</a>
+  <a href="#gallery" onclick="closeNav()">Our Moment</a>
+  <a href="#event" onclick="closeNav()">Akad &amp; Resepsi</a>
+  <a href="#rsvp" onclick="closeNav()">RSVP &amp; Ucapan</a>
+  <a href="#gift" onclick="closeNav()">Wedding Gift</a>
+</div>
 
 <button id="music-btn" title="Musik" onclick="toggleMusic()">
   <svg id="music-icon" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
 </button>
 
-</div><!-- /app -->
-
 <div id="lightbox"><span class="x" onclick="closeLb()">&times;</span><img id="lb-img" src="" alt=""></div>
 <audio id="bgm" loop preload="auto"><source src="song.mp3" type="audio/mpeg"></audio>
 
 <script>
-  // ---- Guest name ----
-  (function(){var p=new URLSearchParams(location.search);var to=p.get('to');
-   if(to)document.getElementById('guest-name').textContent=decodeURIComponent(to.replace(/\+/g,' '));})();
+  function closeNav(){document.getElementById('nav-menu').classList.remove('open');}
+  (function(){var p=new URLSearchParams(location.search);var to=p.get('to');if(to)document.getElementById('guest-name').textContent=decodeURIComponent(to.replace(/\+/g,' '));})();
 
-  // ---- Copy account number ----
-  function copyAcct(){
-    var no='4561125974', btn=document.getElementById('copy-btn');
-    function done(){var o=btn.innerHTML;btn.innerHTML='✓ Nomor Rekening Disalin';setTimeout(function(){btn.innerHTML=o;},2000);}
-    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(no).then(done).catch(function(){fallback(no);done();});}
-    else{fallback(no);done();}
-  }
+  // Copy helpers
   function fallback(t){var ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(ta);}
-  function copyAddr(){
-    var addr=document.getElementById('addr-text').textContent.trim(), btn=document.getElementById('addr-btn');
-    function done(){var o=btn.innerHTML;btn.innerHTML='✓ Alamat Disalin';setTimeout(function(){btn.innerHTML=o;},2000);}
-    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(addr).then(done).catch(function(){fallback(addr);done();});}
-    else{fallback(addr);done();}
-  }
+  function copyAcct(){var no='4561125974',btn=document.getElementById('copy-btn');function d(){var o=btn.innerHTML;btn.innerHTML='✓ Nomor Rekening Disalin';setTimeout(function(){btn.innerHTML=o;},2000);}if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(no).then(d).catch(function(){fallback(no);d();});}else{fallback(no);d();}}
+  function copyAddr(){var a=document.getElementById('addr-text').textContent.trim(),btn=document.getElementById('addr-btn');function d(){var o=btn.innerHTML;btn.innerHTML='✓ Alamat Disalin';setTimeout(function(){btn.innerHTML=o;},2000);}if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(a).then(d).catch(function(){fallback(a);d();});}else{fallback(a);d();}}
 
-  // ---- Countdown ----
+  // Countdown
   var TARGET=new Date('2026-08-15T10:00:00+07:00').getTime();
   function tick(){var d=Math.max(0,TARGET-Date.now());
     document.getElementById('cd-d').textContent=String(Math.floor(d/864e5)).padStart(2,'0');
@@ -468,131 +442,53 @@
     document.getElementById('cd-s').textContent=String(Math.floor(d%6e4/1e3)).padStart(2,'0');}
   tick();setInterval(tick,1000);
 
-  // ---- Calendar link ----
   document.getElementById('cal-link').href='https://calendar.google.com/calendar/render?action=TEMPLATE'
     +'&text='+encodeURIComponent('Pernikahan Erlangga & Ade Fitriyani')
     +'&dates=20260815T030000Z/20260815T070000Z'
     +'&details='+encodeURIComponent('Akad & Resepsi. Turut berbahagia atas kehadiran Anda.')
     +'&location='+encodeURIComponent('Starray Hotel Kebayoran, Jakarta');
 
-  // ---- Reveal ----
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1});
+  // Reveal
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.08});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
 
-  // ---- Gallery slider ----
-  var track=document.getElementById('track');
-  var slides=track.children.length;
-  var dots=document.getElementById('dots');
-  for(var i=0;i<slides;i++){var d=document.createElement('span');if(i===0)d.className='on';dots.appendChild(d);}
-  function curIndex(){return Math.round(track.scrollLeft/track.clientWidth);}
-  function setDots(){var c=curIndex();[].forEach.call(dots.children,function(s,i){s.className=i===c?'on':'';});}
-  track.addEventListener('scroll',function(){window.requestAnimationFrame(setDots);});
-  function slide(dir){var c=curIndex()+dir;if(c<0)c=slides-1;if(c>=slides)c=0;track.scrollTo({left:c*track.clientWidth,behavior:'smooth'});}
-  [].forEach.call(track.querySelectorAll('img'),function(img){img.addEventListener('click',function(){document.getElementById('lb-img').src=img.src;document.getElementById('lightbox').classList.add('show');});});
-  function closeLb(){document.getElementById('lightbox').classList.remove('show');}
-  document.getElementById('lightbox').addEventListener('click',function(e){if(e.target.id==='lightbox')closeLb();});
+  // Lightbox (gallery + panels)
+  var lb=document.getElementById('lightbox'),lbi=document.getElementById('lb-img');
+  document.querySelectorAll('#masonry img').forEach(function(img){img.addEventListener('click',function(){lbi.src=img.src;lb.classList.add('show');});});
+  function closeLb(){lb.classList.remove('show');}
+  lb.addEventListener('click',function(e){if(e.target.id==='lightbox')closeLb();});
 
-  // ================= BACKEND =================
+  // Backend (RSVP + Ucapan)
   var GAS_URL="https://script.google.com/macros/s/AKfycbxbQ9S0UxmefWPQV9HmzQPFvC3RuYZm3j-oKX5hrKKClcT7jr-_M65Qe_1UtypN1mcP/exec";
-
   function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
-  function renderFeed(list){
-    var feed=document.getElementById('feed');
+  function renderFeed(list){var feed=document.getElementById('feed');
     if(!list||!list.length){feed.innerHTML='<div class="empty">Jadilah yang pertama memberi ucapan &amp; doa 💐</div>';return;}
-    feed.innerHTML=list.map(function(m){
-      var t=m.waktu?('<div class="wtime">'+esc(m.waktu)+'</div>'):'';
-      return '<div class="wish"><div class="wn">'+esc(m.nama||'Tamu')+'</div><div class="wt">'+esc(m.pesan||'')+'</div>'+t+'</div>';
-    }).join('');
-  }
-  function loadFeed(){
-    if(!GAS_URL)return;
-    fetch(GAS_URL).then(function(r){return r.json();}).then(function(d){renderFeed(d.messages||[]);}).catch(function(){});
-  }
+    feed.innerHTML=list.map(function(m){var t=m.waktu?('<div class="wtime">'+esc(m.waktu)+'</div>'):'';return '<div class="wish"><div class="wn">'+esc(m.nama||'Tamu')+'</div><div class="wt">'+esc(m.pesan||'')+'</div>'+t+'</div>';}).join('');}
+  function loadFeed(){if(!GAS_URL)return;fetch(GAS_URL).then(function(r){return r.json();}).then(function(d){renderFeed(d.messages||[]);}).catch(function(){});}
   loadFeed();
-
-  var form=document.getElementById('rsvp-form');
-  var msg=document.getElementById('rsvp-msg');
-  var btn=document.getElementById('rsvp-btn');
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
+  var form=document.getElementById('rsvp-form'),msg=document.getElementById('rsvp-msg'),btn=document.getElementById('rsvp-btn');
+  form.addEventListener('submit',function(e){e.preventDefault();
     var kehadiran=(form.querySelector('input[name=kehadiran]:checked')||{}).value||'';
     var data={nama:form.nama.value.trim(),kehadiran:kehadiran,jumlah:form.jumlah.value,pesan:form.pesan.value.trim(),waktu:new Date().toLocaleString('id-ID')};
     if(!data.nama||!data.kehadiran){msg.className='err';msg.textContent='Mohon lengkapi nama & konfirmasi kehadiran.';return;}
     if(!GAS_URL){msg.className='';msg.textContent='Terima kasih, '+data.nama+'!';return;}
     btn.disabled=true;msg.className='';msg.textContent='Mengirim...';
     fetch(GAS_URL,{method:'POST',body:new URLSearchParams(data)})
-      .then(function(){
-        msg.className='';msg.textContent='Terima kasih, '+data.nama+'! 💚';
+      .then(function(){msg.className='';msg.textContent='Terima kasih, '+data.nama+'! 💚';
         if(data.pesan){var feed=document.getElementById('feed');var em=feed.querySelector('.empty');if(em)feed.innerHTML='';
-          var el=document.createElement('div');el.className='wish';
-          el.innerHTML='<div class="wn">'+esc(data.nama)+'</div><div class="wt">'+esc(data.pesan)+'</div><div class="wtime">'+esc(data.waktu)+'</div>';
-          feed.insertBefore(el,feed.firstChild);}
-        form.reset();
-      })
+          var el=document.createElement('div');el.className='wish';el.innerHTML='<div class="wn">'+esc(data.nama)+'</div><div class="wt">'+esc(data.pesan)+'</div><div class="wtime">'+esc(data.waktu)+'</div>';feed.insertBefore(el,feed.firstChild);}
+        form.reset();})
       .catch(function(){msg.className='err';msg.textContent='Maaf, terjadi kesalahan. Coba lagi ya.';})
       .finally(function(){btn.disabled=false;setTimeout(loadFeed,1500);});
   });
 
-  // ================= MUSIC =================
-  var bgm=document.getElementById('bgm'), musicOn=false, audioCtx=null, synthNodes=[], usingSynth=false;
-  var mbtn=document.getElementById('music-btn');
+  // Music
+  var bgm=document.getElementById('bgm'),musicOn=false,mbtn=document.getElementById('music-btn');
   bgm.volume=0.6;
+  function startMusic(){bgm.play().then(function(){musicOn=true;mbtn.classList.add('spin');}).catch(function(){});}
+  function toggleMusic(){if(musicOn){bgm.pause();musicOn=false;mbtn.classList.remove('spin');}else{startMusic();}}
 
-  function startSynth(){
-    try{
-      audioCtx=audioCtx||new (window.AudioContext||window.webkitAudioContext)();
-      usingSynth=true;
-      var master=audioCtx.createGain();master.gain.value=0.0;master.connect(audioCtx.destination);
-      master.gain.linearRampToValueAtTime(0.14,audioCtx.currentTime+2);
-      // gentle chord progression (soft pads) — Cmaj7 / Am7 / Fmaj7 / G
-      var chords=[[261.63,329.63,392.00,493.88],[220.00,261.63,329.63,392.00],[174.61,220.00,261.63,349.23],[196.00,246.94,293.66,392.00]];
-      var t=audioCtx.currentTime+0.1, bar=4;
-      function schedule(){
-        for(var c=0;c<chords.length;c++){
-          chords[c].forEach(function(f){
-            var o=audioCtx.createOscillator(),g=audioCtx.createGain();
-            o.type='sine';o.frequency.value=f;
-            var st=t+c*bar;
-            g.gain.setValueAtTime(0,st);g.gain.linearRampToValueAtTime(0.16,st+0.6);
-            g.gain.linearRampToValueAtTime(0.0001,st+bar-0.2);
-            o.connect(g);g.connect(master);o.start(st);o.stop(st+bar);
-            synthNodes.push(o);
-          });
-        }
-        t+=chords.length*bar;
-      }
-      schedule();synthNodes._loop=setInterval(schedule,chords.length*bar*1000);
-      synthNodes._master=master;
-    }catch(err){}
-  }
-  function stopSynth(){
-    if(synthNodes._loop)clearInterval(synthNodes._loop);
-    if(synthNodes._master){try{synthNodes._master.gain.linearRampToValueAtTime(0,audioCtx.currentTime+0.4);}catch(e){}}
-    usingSynth=false;
-  }
-  function startMusic(){
-    // Prefer a real song file if present; otherwise gentle ambient synth.
-    bgm.play().then(function(){musicOn=true;mbtn.classList.add('spin');}).catch(function(){
-      startSynth();musicOn=true;mbtn.classList.add('spin');
-    });
-  }
-  function toggleMusic(){
-    if(musicOn){
-      if(usingSynth)stopSynth();else bgm.pause();
-      musicOn=false;mbtn.classList.remove('spin');
-    }else{
-      if(usingSynth){if(audioCtx)audioCtx.resume();startSynth();}else startMusic();
-      musicOn=true;mbtn.classList.add('spin');
-    }
-  }
-
-  // ---- Open invitation (also starts music via user gesture) ----
-  function openInvite(){
-    document.getElementById('cover').classList.add('hidden');
-    document.body.style.overflow='';document.querySelector('.app').style.overflow='';
-    startMusic();
-    setTimeout(function(){document.getElementById('cover').style.display='none';},1000);
-  }
+  function openInvite(){document.getElementById('cover').classList.add('hidden');document.body.style.overflow='';startMusic();setTimeout(function(){document.getElementById('cover').style.display='none';},1000);}
   document.body.style.overflow='hidden';
 </script>
 </body>
