@@ -202,7 +202,13 @@
   #rsvp-msg.err{color:#b5533f}
   .wishes{margin-top:30px;max-width:520px;margin-left:auto;margin-right:auto}
   .wishes .whead{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sage);text-align:center;margin-bottom:14px}
-  .feed{max-height:340px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;padding-right:4px}
+  .feed{display:flex;flex-direction:column;gap:10px}
+  .wpage{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:22px;font-family:var(--sans);font-size:.82rem}
+  .wpage span{cursor:pointer;color:var(--muted);padding:2px 7px;border-radius:3px;transition:.2s;user-select:none}
+  .wpage span:hover{color:var(--green)}
+  .wpage span.on{color:var(--green);font-weight:500;border:1px solid var(--line)}
+  .wpage span.nav{color:var(--green2);text-transform:uppercase;font-size:.68rem;letter-spacing:.12em}
+  .wpage span.off{opacity:.35;pointer-events:none}
   .wish{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:13px 15px}
   .wish .wn{font-family:var(--disp);font-size:1.1rem;color:var(--green);line-height:1.1}
   .wish .wt{color:var(--ink);font-size:.9rem;margin-top:4px}
@@ -415,6 +421,7 @@
       <div class="wishes">
         <div class="whead">Ucapan &amp; Doa dari Tamu</div>
         <div class="feed" id="feed"><div class="empty">Memuat ucapan...</div></div>
+        <div class="wpage" id="wpage"></div>
       </div>
     </div>
   </section>
@@ -506,9 +513,22 @@
   // Backend (RSVP + Ucapan)
   var GAS_URL="https://script.google.com/macros/s/AKfycbxbQ9S0UxmefWPQV9HmzQPFvC3RuYZm3j-oKX5hrKKClcT7jr-_M65Qe_1UtypN1mcP/exec";
   function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
-  function renderFeed(list){var feed=document.getElementById('feed');
-    if(!list||!list.length){feed.innerHTML='<div class="empty">Jadilah yang pertama memberi ucapan &amp; doa 💐</div>';return;}
-    feed.innerHTML=list.map(function(m){var t=m.waktu?('<div class="wtime">'+esc(m.waktu)+'</div>'):'';return '<div class="wish"><div class="wn">'+esc(m.nama||'Tamu')+'</div><div class="wt">'+esc(m.pesan||'')+'</div>'+t+'</div>';}).join('');}
+  var WISHES=[], WPAGE=1, WPER=5;
+  function drawWishes(){
+    var feed=document.getElementById('feed'), pag=document.getElementById('wpage');
+    if(!WISHES.length){feed.innerHTML='<div class="empty">Jadilah yang pertama memberi ucapan &amp; doa 💐</div>';pag.innerHTML='';return;}
+    var pages=Math.ceil(WISHES.length/WPER);
+    if(WPAGE>pages)WPAGE=pages;
+    var start=(WPAGE-1)*WPER, slice=WISHES.slice(start,start+WPER);
+    feed.innerHTML=slice.map(function(m){var t=m.waktu?('<div class="wtime">'+esc(m.waktu)+'</div>'):'';return '<div class="wish"><div class="wn">'+esc(m.nama||'Tamu')+'</div><div class="wt">'+esc(m.pesan||'')+'</div>'+t+'</div>';}).join('');
+    var h='';
+    h+='<span class="nav '+(WPAGE===1?'off':'')+'" onclick="goWish('+(WPAGE-1)+')">&larr; Sebelumnya</span>';
+    for(var i=1;i<=pages;i++){h+='<span class="'+(i===WPAGE?'on':'')+'" onclick="goWish('+i+')">'+i+'</span>';}
+    h+='<span class="nav '+(WPAGE===pages?'off':'')+'" onclick="goWish('+(WPAGE+1)+')">Selanjutnya &rarr;</span>';
+    pag.innerHTML=h;
+  }
+  function goWish(p){var pages=Math.ceil(WISHES.length/WPER);if(p<1||p>pages)return;WPAGE=p;drawWishes();document.getElementById('feed').scrollIntoView({behavior:'smooth',block:'start'});}
+  function renderFeed(list){WISHES=list||[];WPAGE=1;drawWishes();}
   function loadFeed(){if(!GAS_URL)return;fetch(GAS_URL).then(function(r){return r.json();}).then(function(d){renderFeed(d.messages||[]);}).catch(function(){});}
   loadFeed();
   var form=document.getElementById('rsvp-form'),msg=document.getElementById('rsvp-msg'),btn=document.getElementById('rsvp-btn');
@@ -520,8 +540,7 @@
     btn.disabled=true;msg.className='';msg.textContent='Mengirim...';
     fetch(GAS_URL,{method:'POST',body:new URLSearchParams(data)})
       .then(function(){msg.className='';msg.textContent='Terima kasih, '+data.nama+'! 💚';
-        if(data.pesan){var feed=document.getElementById('feed');var em=feed.querySelector('.empty');if(em)feed.innerHTML='';
-          var el=document.createElement('div');el.className='wish';el.innerHTML='<div class="wn">'+esc(data.nama)+'</div><div class="wt">'+esc(data.pesan)+'</div><div class="wtime">'+esc(data.waktu)+'</div>';feed.insertBefore(el,feed.firstChild);}
+        if(data.pesan){WISHES.unshift({nama:data.nama,pesan:data.pesan,waktu:data.waktu});WPAGE=1;drawWishes();}
         form.reset();})
       .catch(function(){msg.className='err';msg.textContent='Maaf, terjadi kesalahan. Coba lagi ya.';})
       .finally(function(){btn.disabled=false;setTimeout(loadFeed,1500);});
