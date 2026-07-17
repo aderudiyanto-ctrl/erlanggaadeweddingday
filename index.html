@@ -77,13 +77,37 @@
   h2.title{font-family:var(--disp);font-weight:500;font-size:clamp(2rem,5vw,2.9rem);color:var(--green);line-height:1.1}
   .sec-ivory{background:var(--ivory)}
   .sec-panel{background:var(--panel2)}
+  /* photo-background sections (editorial, less white space) */
+  .sec-photo{position:relative;color:#fff;background-size:cover;background-position:center;background-attachment:scroll}
+  .sec-photo::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(28,38,22,.74),rgba(24,33,18,.86))}
+  .sec-photo > *{position:relative;z-index:1}
+  .sec-photo .title{color:#fff}
+  .sec-photo .eyebrow{color:#cbd3ba}
+  .sec-photo .wholedate{color:#e2e8d4}
+  .sec-photo .cd-cell{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.22)}
+  .sec-photo .cd-cell .num{color:#fff}
+  .sec-photo .cd-cell .lbl{color:#cbd3ba}
+  .sec-photo .ev-card,.sec-photo .venue,.sec-photo .gift-card{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2);backdrop-filter:blur(2px)}
+  .sec-photo .ev-card h3,.sec-photo .venue .place,.sec-photo .gift-card .acct-no,.sec-photo .gift-card .addr-name{color:#fff}
+  .sec-photo .ev-card .time{color:#eef1e6}
+  .sec-photo .ev-card .subx,.sec-photo .venue .addr,.sec-photo .gift-card .acct-name,.sec-photo .gift-card .addr-text,.sec-photo p.lead,.sec-photo .gift-or{color:#cbd3ba}
+  .sec-photo .ic-wrap{background:rgba(255,255,255,.14)}
+  .sec-photo svg.ic{stroke:#e2e8d4}
+  .sec-photo .btn-outline,.sec-photo .btn-copy{border-color:#fff;color:#fff}
+  .sec-photo .btn-outline svg,.sec-photo .btn-copy svg{stroke:#fff}
+  .sec-photo .btn-outline:hover,.sec-photo .btn-copy:hover{background:#fff;color:var(--green)}
+  .sec-photo .btn-outline:hover svg,.sec-photo .btn-copy:hover svg{stroke:var(--green)}
+  .sec-photo .divider svg{stroke:#dfe6cf}
+  .sec-photo .divider::before{background:linear-gradient(90deg,transparent,#dfe6cf)}
+  .sec-photo .divider::after{background:linear-gradient(90deg,#dfe6cf,transparent)}
+  .sec-photo .bank-logo{background:#fff;color:var(--green)}
 
   /* date header row */
-  .date-row{display:flex;justify-content:center;gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);max-width:420px;margin:0 auto 34px}
-  .date-row div{flex:1;text-align:center;padding:14px 4px}
+  .date-row{display:grid;grid-template-columns:1fr 1fr 1fr;max-width:360px;margin:0 auto 28px;border:1px solid var(--line);border-radius:5px;overflow:hidden;background:var(--panel)}
+  .date-row div{text-align:center;padding:15px 6px}
   .date-row div + div{border-left:1px solid var(--line)}
-  .date-row .l{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--sage)}
-  .date-row .v{font-family:var(--disp);font-size:1.3rem;color:var(--green);margin-top:4px}
+  .date-row .l{font-size:.56rem;letter-spacing:.24em;text-transform:uppercase;color:var(--sage)}
+  .date-row .v{font-family:var(--disp);font-size:1.2rem;color:var(--green);margin-top:6px;line-height:1}
 
   #intro{text-align:center}
   #intro .names{font-family:var(--disp);font-weight:500;font-size:clamp(2.4rem,6vw,3.4rem);color:var(--green);line-height:1.05;margin:6px 0}
@@ -114,11 +138,11 @@
   /* couple */
   #couple{text-align:center}
   #couple .cphoto{width:100%;max-width:520px;aspect-ratio:4/5;object-fit:cover;border-radius:3px;margin:26px auto 6px}
-  .person{padding:20px 6px}
-  .person .role{font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;color:var(--sage);margin-bottom:6px}
-  .person h3{font-family:var(--disp);font-weight:500;font-size:1.7rem;color:var(--green);line-height:1.15}
-  .person .parents{color:var(--muted);font-size:.9rem;margin-top:6px;line-height:1.55}
-  .amp-sep{font-family:var(--disp);font-style:italic;font-size:1.7rem;color:var(--sage)}
+  .person{padding:14px 6px}
+  .person .role{font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--sage);margin-bottom:8px}
+  .person h3{font-family:var(--disp);font-weight:500;font-size:clamp(1.4rem,4.4vw,1.7rem);color:var(--green);line-height:1.15}
+  .person .parents{color:var(--muted);font-size:.98rem;margin-top:9px;line-height:1.7}
+  .amp-sep{font-family:var(--disp);font-style:italic;font-size:1.6rem;color:var(--sage);margin:6px 0}
 
   /* gallery masonry */
   #gallery .head{text-align:center;margin-bottom:26px}
@@ -129,12 +153,14 @@
   /* event */
   #event{text-align:center}
   #event .wholedate{font-family:var(--disp);font-size:1.3rem;color:var(--green2);margin:12px 0 22px}
-  .ev-card{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:24px 18px;margin-bottom:14px}
-  .ev-card .ic-wrap,.venue .ic-wrap{width:44px;height:44px;border-radius:50%;background:var(--panel2);display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
-  .ev-card h3{font-family:var(--disp);font-weight:500;font-size:1.4rem;color:var(--green)}
-  .ev-card .time{font-size:.98rem;color:var(--ink);margin-top:4px}
-  .ev-card .subx{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:3px}
-  .venue{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:24px 18px}
+  .events-2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+  @media(max-width:520px){.events-2{grid-template-columns:1fr}}
+  .ev-card{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:18px 14px;margin-bottom:0}
+  .ev-card .ic-wrap,.venue .ic-wrap{width:38px;height:38px;border-radius:50%;background:var(--panel2);display:flex;align-items:center;justify-content:center;margin:0 auto 8px}
+  .ev-card h3{font-family:var(--disp);font-weight:500;font-size:1.35rem;color:var(--green)}
+  .ev-card .time{font-size:.96rem;color:var(--ink);margin-top:2px}
+  .ev-card .subx{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+  .venue{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:20px 16px}
   .venue .place{font-family:var(--disp);font-size:1.3rem;color:var(--green)}
   .venue .addr{color:var(--muted);font-size:.86rem;margin:4px 0 16px}
 
@@ -256,7 +282,7 @@
 
   <section class="photo-panel"><img src="panelA.jpg" alt=""><div class="ov"><p>Two souls, one love, one promise.</p></div></section>
 
-  <section id="countdown" class="sec-panel">
+  <section id="countdown" class="sec-photo" style="background-image:url('g13.jpg')">
     <div class="reveal">
       <p class="eyebrow">Counting Down To Our Big Day</p>
       <h2 class="title">Save The Date</h2>
@@ -317,22 +343,24 @@
     </div>
   </section>
 
-  <section id="event" class="sec-panel">
+  <section id="event" class="sec-photo" style="background-image:url('g04.jpg')">
     <div class="reveal">
       <p class="eyebrow">Save The Date</p>
       <h2 class="title">Akad &amp; Resepsi</h2>
       <p class="wholedate">Sabtu, 15 Agustus 2026</p>
-      <div class="ev-card">
-        <div class="ic-wrap"><svg class="ic" viewBox="0 0 24 24"><circle cx="9" cy="9" r="4"/><circle cx="15" cy="15" r="4"/></svg></div>
-        <h3>Akad Nikah</h3>
-        <div class="time">10.00 – 12.00 WIB</div>
-        <div class="subx">The Holy Matrimony</div>
-      </div>
-      <div class="ev-card">
-        <div class="ic-wrap"><svg class="ic" viewBox="0 0 24 24"><path d="M8 22h8M12 15v7M5 3h14l-1 6a6 6 0 0 1-12 0z"/></svg></div>
-        <h3>Resepsi</h3>
-        <div class="time">12.00 – 14.00 WIB</div>
-        <div class="subx">Wedding Reception</div>
+      <div class="events-2">
+        <div class="ev-card">
+          <div class="ic-wrap"><svg class="ic" viewBox="0 0 24 24"><circle cx="9" cy="9" r="4"/><circle cx="15" cy="15" r="4"/></svg></div>
+          <h3>Akad Nikah</h3>
+          <div class="time">10.00 – 12.00 WIB</div>
+          <div class="subx">Ijab &amp; Kabul</div>
+        </div>
+        <div class="ev-card">
+          <div class="ic-wrap"><svg class="ic" viewBox="0 0 24 24"><path d="M8 22h8M12 15v7M5 3h14l-1 6a6 6 0 0 1-12 0z"/></svg></div>
+          <h3>Resepsi</h3>
+          <div class="time">12.00 – 14.00 WIB</div>
+          <div class="subx">Wedding Reception</div>
+        </div>
       </div>
       <div class="venue">
         <div class="ic-wrap"><svg class="ic" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
@@ -374,7 +402,7 @@
     </div>
   </section>
 
-  <section id="gift" class="sec-panel">
+  <section id="gift" class="sec-photo" style="background-image:url('g10.jpg')">
     <div class="reveal">
       <div class="divider"><svg viewBox="0 0 24 24"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7S9 7 8 5.5 9 2 10.5 3 12 7 12 7ZM12 7s3 0 4-1.5S15 2 13.5 3 12 7 12 7Z"/></svg></div>
       <h2 class="title">Wedding Gift</h2>
@@ -387,7 +415,7 @@
       </div>
       <p class="gift-or">atau kirim kado ke alamat</p>
       <div class="gift-card">
-        <div class="ic-wrap" style="width:44px;height:44px;border-radius:50%;background:var(--panel2);display:flex;align-items:center;justify-content:center;margin:0 auto 12px"><svg class="ic" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <div class="ic-wrap" style="width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;margin:0 auto 12px"><svg class="ic" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
         <div class="acct-name" style="font-weight:400">Kepada</div>
         <div class="addr-name">Ade Fitriyani Rudiyanto</div>
         <p class="addr-text" id="addr-text">Apartemen Kalibata City Tower Akasia, Unit A/16/BH, Pancoran, Jakarta Selatan, DKI Jakarta, 12740</p>
